@@ -32,10 +32,12 @@ This project is still in early development, lacking some of the functionality an
     - `acbt convert -f pdf test.cbz`
   - example: convert the file 'test.cbz' in the current folder and all the files in the 'input' subfolder to epub
     - `acbt convert -f epub text.cbz input/*.*`
-  - example: convert the file 'test.cb7' stored in the 'input' subfolder to cbz and store it in the 'output' subfolder
-    - `acbt convert -f pdf -o output input/test.cbz`
+  - example: convert the file 'test.cbr' in the 'input' subfolder to cb7 and store it in the 'output' subfolder
+    - `acbt convert -f cb7 -o output input/test.cbr`
   - example: same as before but scaling the images to a 60% of their original size
-    - `acbt convert -f pdf -o output -s 60 input/test.cbz`
+    - `acbt convert -f cb7 -o output -s 60 input/test.cbr`
+  - example: same as before but converting the images to png
+    - `acbt convert -f cb7 -o output -s 60 -if png input/test.cbr`
 - Create:
   - not yet available.
 - Extract:
