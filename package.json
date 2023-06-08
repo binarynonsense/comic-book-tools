@@ -1,0 +1,61 @@
+{
+  "name": "acbt-comic-book-tools",
+  "version": "1.0.0-beta1",
+  "description": "ACBT - Command-line conversion and creation tools for comic book files",
+  "main": "./app/main.js",
+  "bin": "./app/main.js",
+  "scripts": {
+    "start": "node ./app/main.js",
+    "dist": "echo 'Making windows and linux builds on linux' && npm run dist:cross-windows && npm run dist:cross-linux",
+    "dist:linux": "echo 'Making linux build on linux' && npm run 7zbin:linux && npm run build:linux",
+    "dist:windows": "echo 'Making windows build on windows' && npm run 7zbin:windows && npm run build:windows",
+    "dist:cross-linux": "npm run 7zbin:linux && npm run sharp:linux && npm run canvas:linux && npm run build:linux",
+    "dist:cross-windows": "npm run 7zbin:windows && npm run sharp:windows && npm run canvas:windows && npm run build:windows",
+    "build:linux": "pkg --compress GZip -t linux-x64 -o dist/linux/acbt .",
+    "build:windows": "pkg --compress GZip -t win-x64 -o dist/windows/acbt.exe .",
+    "sharp:linux": "del-cli ./node_modules/sharp && npm install --platform=linux --arch=x64 sharp",
+    "sharp:windows": "del-cli ./node_modules/sharp && npm install --platform=win32 --arch=x64 sharp",
+    "7zbin:linux": "shx chmod +x node_modules/7zip-bin/linux/x64/7za && shx mkdir -p dist/linux/bin && shx cp node_modules/7zip-bin/linux/x64/7za dist/linux/bin/7za",
+    "7zbin:windows": "shx mkdir -p dist/windows/bin && shx cp node_modules/7zip-bin/win/x64/7za.exe dist/windows/bin/7za.exe",
+    "canvas:linux": "del-cli ./node_modules/canvas/ && npm install canvas",
+    "canvas:windows": "del-cli ./node_modules/canvas/build/Release && ./node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp install --directory=./node_modules/canvas --target_platform=win32 --target_arch=x64 --target=16.0.0 --target_libc=unknown --update-binary"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/sharp/**",
+      "node_modules/node-unrar-js/dist/js/unrar.wasm",
+      "node_modules/es-get-iterator/node.js",
+      "node_modules/pdfkit/js/data/*",
+      "node_modules/pdfjs-dist/legacy/build/*",
+      "node_modules/pdfjs-dist/standard_fonts/*",
+      "node_modules/pdfjs-dist/cmaps/*",
+      "node_modules/canvas/build/Release/**",
+      "!node_modules/canvas/build/Release/librsvg-2.so.2",
+      "assets/libs/epub/templates/content.opf.ejs",
+      "node_modules/epub-gen/templates/**"
+    ]
+  },
+  "author": "Álvaro García (www.binarynonsense.com)",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "adm-zip": "^0.5.10",
+    "canvas": "^2.11.2",
+    "changedpi": "^1.0.4",
+    "commander": "^10.0.1",
+    "epub": "^1.2.1",
+    "epub-gen": "^0.1.0",
+    "fast-xml-parser": "^4.2.3",
+    "file-type": "^16.5.4",
+    "node-7z": "^3.0.0",
+    "node-unrar-js": "^2.0.0",
+    "pdfjs-dist": "<3.7",
+    "pdfkit": "^0.13.0",
+    "sharp": "^0.32.1",
+    "shx": "^0.3.4"
+  },
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "pkg": "^5.8.1"
+  }
+}
