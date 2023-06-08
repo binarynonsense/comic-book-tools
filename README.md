@@ -7,6 +7,7 @@ This project is still in early development, lacking some of the functionality an
 ## Contents:
 
 - [Features](#features)
+- [Known Issues](#known-issues)
 - [Downloads](#downloads)
 - [License](#license)
 
@@ -20,6 +21,10 @@ This project is still in early development, lacking some of the functionality an
     - not yet available.
   - Extract:
     - not yet available.
+
+## Known Issues:
+
+On Windows, conversion from pdf to any other format fails with an error due to a conflict between two of the libraries I use (node-canvas and sharp) that I haven't been able to fix so far.
 
 ## Downloads:
 
