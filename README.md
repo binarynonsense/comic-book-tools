@@ -16,7 +16,7 @@ This project is still in early development, lacking some of the functionality an
 - Windows & GNU/Linux versions.
 - Tools:
   - Convert/Resize:
-    - comic books (cbr, cbz, cb7, pdf or epub (images only) to cbz, cb7, pdf or epub).
+    - comic books (cbr, cbz, cb7, epub (images only) or pdf to cbz, cb7, epub or pdf).
   - Create:
     - not yet available.
   - Extract:
