@@ -47,4 +47,4 @@ Not yet available.
 
 ## License:
 
-ACBR's code is released under the BSD 2-Clause [license](./LICENSE).
+ACBT's code is released under the BSD 2-Clause [license](./LICENSE).
