@@ -32,6 +32,8 @@ This project is still in early development, lacking some of the functionality an
     - acbt convert -f pdf test.cbz
   - example: convert the file 'test.cb7' stored in the 'input' subfolder to cbz and store it in the 'output' subfolder
     - acbt convert -f pdf -o output input/test.cbz
+  - example: same as before but scaling the images to a 60% of their original size
+    - acbt convert -f pdf -o output -s 60 input/test.cbz
 - Create:
   - not yet available.
 - Extract:
