@@ -26,7 +26,7 @@ This project is still in early development, lacking some of the functionality an
 ## Usage:
 
 - Convert/Resize:
-  - print a list of the available arguments:
+  - print a list of the available arguments and options:
     - acbt convert -h
   - example: convert the file 'test.cbz' to pdf
     - acbt convert -f pdf test.cbz
