@@ -7,6 +7,7 @@ This project is still in early development, lacking some of the functionality an
 ## Contents:
 
 - [Features](#features)
+- [Usage](#usage)
 - [Known Issues](#known-issues)
 - [Downloads](#downloads)
 - [License](#license)
@@ -21,6 +22,20 @@ This project is still in early development, lacking some of the functionality an
     - not yet available.
   - Extract:
     - not yet available.
+
+## Usage:
+
+- Convert/Resize:
+  - print a list of the available arguments:
+    - acbt convert -h
+  - example: convert the file 'test.cbz' to pdf
+    - acbt convert -f pdf test.cbz
+  - example: convert the file 'test.cb7' stored in the 'input' subfolder to cbz and store it in the 'output' subfolder
+    - acbt convert -f pdf -o output input/test.cbz
+- Create:
+  - not yet available.
+- Extract:
+  - not yet available.
 
 ## Known Issues:
 
