@@ -1,6 +1,7 @@
 const { Command, Option } = require("commander");
 const convert = require("./convert");
 const extract = require("./extract");
+const create = require("./create");
 
 const program = new Command();
 program.name("acbt").version(require("../package.json").version);
@@ -158,6 +159,88 @@ program
     $ acbt extract comicbook.cb7
     $ acbt extract -o ./outputFolder comicbook.cb7
     $ acbt extract --output-folder ./outputFolder --scale 50 -if webp *.*`
+  );
+// CREATE //////////////////////////////////////////////////////////////
+program
+  .command("create")
+  .description("Create a comic book file from image files")
+  .argument(
+    "<input_file...>",
+    "input file/s; supported formats: jpg, png, webp & avif"
+  )
+  // files
+  .option(
+    "-o, --output-folder <path>",
+    "write the output file to this folder",
+    "."
+  )
+  .addOption(
+    new Option(
+      "-co, --create-output-folder <bool>",
+      "create the output folder if the provided path doesn't exist"
+    )
+      .default("false")
+      .choices(["true", "false"])
+  )
+  .addOption(
+    new Option(
+      "-n, --output-name <bool>",
+      "use this as the base for the name of the output file"
+    ).default("New File")
+  )
+  .addOption(
+    new Option(
+      "-f, --format <format>",
+      "use this format for the created comic book"
+    )
+      .default("cbz")
+      .choices(["cbz", "cb7", "pdf", "epub"])
+  )
+  .option(
+    "-s, --scale <integer>",
+    "scale the input images by this percentage; must be an integer value between 1 and 100",
+    "100"
+  )
+  .option(
+    "-tp, --temp-path <path>",
+    "use this folder to write/read temporary files; the operating system's default directory for temporary files will be used if none is provided"
+  )
+  // images
+  .addOption(
+    new Option(
+      "-if, --image-format <format>",
+      "convert the input images to this image format for the output file"
+    )
+      .default("original")
+      .choices(["original", "jpg", "png", "avif", "webp"])
+  )
+  .option(
+    "-iq, --image-quality <integer>",
+    "use this quality value when converting images; must be an integer value between 1 and 100",
+    "90"
+  )
+  // pdf
+  .addOption(
+    new Option(
+      "--pdf-creation-method <method>",
+      "use this method to set the dpi when creating pdf files"
+    )
+      .default("metadata")
+      .choices(["metadata", "300dpi", "72dpi"])
+  )
+  // action
+  .action(function (input_file, options, command) {
+    //console.log(options);
+    create.start(input_file, options, command);
+  })
+  // help: example calls
+  .addHelpText(
+    "after",
+    `
+
+Example calls:
+  $ acbt create -f cbz -if png -n comic_name -o output_folder image_0.jpg image_1.jpg
+  `
   );
 //////////////////////////////////////////////////////////////////////////////
 program.parse();

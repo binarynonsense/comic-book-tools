@@ -19,7 +19,7 @@ This project is still in early development, lacking some of the functionality an
   - Convert/Resize:
     - comic books (cbr, cbz, cb7, epub (images only) or pdf to cbz, cb7, epub or pdf).
   - Create:
-    - not yet available.
+    - a comic book (cbz, cb7, pdf or epub) from a list of image files.
   - Extract:
     - comic book pages to image files (jpg, png, avif or webp).
 
@@ -39,7 +39,12 @@ This project is still in early development, lacking some of the functionality an
   - example: same as before but converting the images to png
     - `acbt convert -f cb7 -o output -s 60 -if png input/test.cbr`
 - Create:
-  - not yet available.
+  - print a list of the available arguments and options:
+    - `acbt create -h`
+  - example: create a cbz file from all the jpg images in the 'input' subfolder and store it in the current folder using the default name
+    - `acbt create -f cbz input/*.jpg`
+  - example: same as before but scale the images to a 60%, convert them to webp, use 'my comic book' as the base for the created file's name and store it in the 'output' subfolder
+    - `acbt create -f cbz -s 50 -if webp -o temp/ -n "my comic book" input/*.jpg`
 - Extract:
   - print a list of the available arguments and options:
     - `acbt extract -h`
