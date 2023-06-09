@@ -136,7 +136,7 @@ async function start(inputFilePaths, options, command) {
       /////////////////////////////////
       // extract content
       /////////////////////////////////
-      let tempFolderPath = fileUtils.createTempFolder();
+      let tempFolderPath = fileUtils.createTempFolder(options.tempPath);
       console.log("\textracting images...");
       try {
         switch (fileType) {

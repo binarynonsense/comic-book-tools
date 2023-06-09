@@ -101,7 +101,7 @@ async function start(inputFilePaths, options, command) {
     /////////////////////////////////
     // copy images to temp
     /////////////////////////////////
-    let tempFolderPath = fileUtils.createTempFolder();
+    let tempFolderPath = fileUtils.createTempFolder(options.tempPath);
     let imgFilePaths = [];
     for (let index = 0; index < filePaths.length; index++) {
       const inPath = filePaths[index];

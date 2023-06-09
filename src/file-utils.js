@@ -115,8 +115,31 @@ function getTempFolderPath() {
 }
 exports.getTempFolderPath = getTempFolderPath;
 
-function createTempFolder() {
-  g_tempFolderPath = fs.mkdtempSync(path.join(os.tmpdir(), "acbt-"));
+function createTempFolder(baseFolderPath) {
+  if (baseFolderPath) {
+    let folderPath;
+    try {
+      folderPath = path.resolve(baseFolderPath);
+      if (fs.existsSync(folderPath)) {
+        try {
+          let stats = fs.statSync(folderPath);
+          if (!stats.isDirectory()) {
+            throw "The path didn't correspond to a folder";
+          }
+        } catch (error) {
+          // shouldn't be able to reach here
+          throw "The folder didn't exist";
+        }
+      } else {
+        throw "Invalid path";
+      }
+    } catch (error) {
+      folderPath = os.tmpdir();
+    }
+    g_tempFolderPath = fs.mkdtempSync(path.join(folderPath, "acbt-"));
+  } else {
+    g_tempFolderPath = fs.mkdtempSync(path.join(os.tmpdir(), "acbt-"));
+  }
   console.log("\ttemp folder created: " + g_tempFolderPath);
   return g_tempFolderPath;
 }
@@ -131,7 +154,8 @@ exports.cleanUpTempFolder = cleanUpTempFolder;
 
 const deleteTempFolderRecursive = function (folderPath) {
   if (fs.existsSync(folderPath)) {
-    if (!folderPath.startsWith(os.tmpdir())) {
+    let folderName = path.basename(folderPath);
+    if (!folderName.startsWith("acbt-")) {
       // safety check
       return;
     }
