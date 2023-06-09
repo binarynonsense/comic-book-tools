@@ -399,12 +399,12 @@ async function start(inputFilePaths, options, command) {
           fileFormats.createZip(imgFilePaths, outputFilePath);
         }
       } catch (error) {
-        throw "Couldn't create file " + outputFilePath + " || " + error;
+        throw "Couldn't create file " + outputFilePath + " > " + error;
       }
     } catch (error) {
       fileUtils.cleanUpTempFolder();
       console.log(
-        "ERROR: Couldn't convert the file " + filePath + " || " + error
+        "ERROR: Couldn't convert the file " + filePath + " > " + error
       );
       summaryErrors++;
       continue;
