@@ -99,7 +99,11 @@ program
     "input file/s; supported formats: cbz, cbr, cb7, epub (images only) & pdf"
   )
   // files
-  .option("-o, --output-folder <path>", "write the output to this folder", ".")
+  .option(
+    "-o, --output-folder <path>",
+    "write the output to this folder; a new subfolder inside it, with a unique name based on the file's one, will be created and the extracted images will be stored there",
+    "."
+  )
   .addOption(
     new Option(
       "-co, --create-output-folder <bool>",

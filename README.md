@@ -21,7 +21,7 @@ This project is still in early development, lacking some of the functionality an
   - Create:
     - not yet available.
   - Extract:
-    - not yet available.
+    - comic book pages to image files (jpg, png, avif or webp).
 
 ## Usage:
 
@@ -41,7 +41,18 @@ This project is still in early development, lacking some of the functionality an
 - Create:
   - not yet available.
 - Extract:
-  - not yet available.
+  - print a list of the available arguments and options:
+    - `acbt extract -h`
+  - example: extract the file 'test.cbz' in the current folder to that same folder (a new subfolder inside it, with a unique name based on the file's one, will be created and the extracted images will be stored there)
+    - `acbt extract test.cbz`
+  - example: same as before but will also extract all the files inside the 'input' subfolder
+    - `acbt extract text.cbz input/*.*`
+  - example: extract the file 'test.cbr' in the 'input' subfolder to the 'output' subfolder (a new subfolder inside it, with a unique name based on the file's one, will be created and the extracted images will be stored there)
+    - `acbt extract -o output input/test.cbr`
+  - example: same as before but scaling the images to a 60% of their original size
+    - `acbt extract -o output -s 60 input/test.cbr`
+  - example: same as before but converting the images to png
+    - `acbt extract -o output -s 60 -if png input/test.cbr`
 
 ## Known Issues:
 
