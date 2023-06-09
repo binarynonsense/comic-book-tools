@@ -12,6 +12,7 @@ async function start(inputFilePaths, options, command) {
   // validate input
   /////////////////////////////////
   // arguments
+  inputFilePaths = fileUtils.expandCLIFilePaths(inputFilePaths);
   let filePaths = [];
   inputFilePaths.forEach((inputFilePath) => {
     if (fs.existsSync(inputFilePath)) {

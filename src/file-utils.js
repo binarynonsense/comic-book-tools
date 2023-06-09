@@ -28,6 +28,21 @@ exports.compare = function (a, b) {
   });
 };
 
+exports.expandCLIFilePaths = function (filePaths) {
+  let expandedFilePaths = [];
+  const { globSync } = require("glob");
+  filePaths.forEach((inputFilePath) => {
+    try {
+      const filesFromGlob = globSync(inputFilePath, {
+        nodir: true,
+        windowsPathsNoEscape: true,
+      });
+      expandedFilePaths = expandedFilePaths.concat(filesFromGlob);
+    } catch (error) {}
+  });
+  return expandedFilePaths;
+};
+
 ///////////////////////////////////////////////////////////////////////////////
 // GET IMAGES /////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
