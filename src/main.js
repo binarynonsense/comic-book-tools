@@ -5,6 +5,11 @@ const create = require("./create");
 
 const program = new Command();
 program.name("acbt").version(require("../package.json").version);
+let helpBeforeText = `ACBT - Command-line conversion and creation tools for comic book files
+by Álvaro García (www.binarynonsense.com)
+version: ${require("../package.json").version}
+
+`;
 // CONVERT //////////////////////////////////////////////////////////////
 program
   .command("convert")
@@ -81,6 +86,7 @@ program
     convert.start(input_file, options, command);
   })
   // help: example calls
+  .addHelpText("before", helpBeforeText)
   .addHelpText(
     "after",
     `
@@ -151,6 +157,7 @@ program
     extract.start(input_file, options, command);
   })
   // help: example calls
+  .addHelpText("before", helpBeforeText)
   .addHelpText(
     "after",
     `
@@ -234,6 +241,7 @@ program
     create.start(input_file, options, command);
   })
   // help: example calls
+  .addHelpText("before", helpBeforeText)
   .addHelpText(
     "after",
     `
@@ -243,6 +251,7 @@ Example calls:
   `
   );
 //////////////////////////////////////////////////////////////////////////////
+program.addHelpText("before", helpBeforeText);
 program.parse();
 
 // NOTE: to call from npm start add two dashes, ej: npm start convert -- --input ./al.cbz other.cbr -o something
