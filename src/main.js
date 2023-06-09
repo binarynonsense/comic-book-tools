@@ -8,7 +8,6 @@ program.name("acbt").version(require("../package.json").version);
 let helpBeforeText = `ACBT - Command-line conversion and creation tools for comic book files
 by Álvaro García (www.binarynonsense.com)
 version: ${require("../package.json").version}
-
 `;
 // CONVERT //////////////////////////////////////////////////////////////
 program
