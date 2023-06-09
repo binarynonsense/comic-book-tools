@@ -53,7 +53,7 @@ This project is still in early development, lacking some of the functionality an
 
 ## Known Issues:
 
-On Windows, conversion from pdf to any other format fails with an error due to a conflict between two of the libraries I use (node-canvas and sharp) that I haven't been able to fix so far.
+On Windows, extractinf a pdf or converting a pdf to any other format fails with an error due to a conflict between two of the libraries I use (node-canvas and sharp) that I haven't been able to fix so far.
 
 ## Downloads:
 
