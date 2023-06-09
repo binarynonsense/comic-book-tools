@@ -40,7 +40,7 @@ This project is still in early development, lacking some of the functionality an
   - example: create a cbz file from all the jpg images in the 'input' subfolder and store it in the current folder using the default name
     - `acbt create -f cbz input/*.jpg`
   - example: same as before but scaling the images to a 60%, converting them to webp, using 'my comic book' as the base for the created file's name and storing it in the 'output' subfolder
-    - `acbt create -f cbz -s 50 -if webp -o temp/ -n "my comic book" input/*.jpg`
+    - `acbt create -f cbz -s 60 -if webp -o temp/ -n "my comic book" input/*.jpg`
 - Extract:
   - print a list of the available arguments and options:
     - `acbt extract -h`
