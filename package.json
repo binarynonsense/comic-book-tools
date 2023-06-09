@@ -15,8 +15,8 @@
     "build:windows": "pkg --compress GZip -t win-x64 -o dist/windows/acbt.exe .",
     "sharp:linux": "del-cli ./node_modules/sharp && npm install --platform=linux --arch=x64 sharp",
     "sharp:windows": "del-cli ./node_modules/sharp && npm install --platform=win32 --arch=x64 sharp",
-    "7zbin:linux": "shx chmod +x node_modules/7zip-bin/linux/x64/7za && shx mkdir -p dist/linux/bin && shx cp node_modules/7zip-bin/linux/x64/7za dist/linux/bin/7za",
-    "7zbin:windows": "shx mkdir -p dist/windows/bin && shx cp node_modules/7zip-bin/win/x64/7za.exe dist/windows/bin/7za.exe",
+    "7zbin:linux": "shx chmod +x node_modules/7zip-bin/linux/x64/7za && shx mkdir -p dist/linux/lib && shx cp node_modules/7zip-bin/linux/x64/7za dist/linux/lib/7za",
+    "7zbin:windows": "shx mkdir -p dist/windows/lib && shx cp node_modules/7zip-bin/win/x64/7za.exe dist/windows/lib/7za.exe",
     "canvas:linux": "del-cli ./node_modules/canvas/ && npm install canvas",
     "canvas:windows": "del-cli ./node_modules/canvas/build/Release && ./node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp install --directory=./node_modules/canvas --target_platform=win32 --target_arch=x64 --target=16.0.0 --target_libc=unknown --update-binary",
     "licenses": "license-checker > licenses/node_modules.txt && shx sed -i 's/path.*node_modules/path: node_modules/' ./licenses/node_modules.txt && shx sed -i 's/licenseFile.*node_modules/licenseFile: node_modules/' ./licenses/node_modules.txt"

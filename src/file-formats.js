@@ -135,9 +135,9 @@ function checkPathTo7ZipBin() {
       if (process.platform === "win32")
         g_pathTo7zipBin = path.join(
           path.dirname(process.execPath),
-          "bin/7za.exe"
+          "lib/7za.exe"
         );
-      else g_pathTo7zipBin = "./bin/7za";
+      else g_pathTo7zipBin = "./lib/7za";
     } else {
       g_pathTo7zipBin = sevenBin.path7za;
     }
