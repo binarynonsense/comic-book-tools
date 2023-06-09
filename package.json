@@ -2,10 +2,10 @@
   "name": "acbt-comic-book-tools",
   "version": "1.0.0-beta1",
   "description": "ACBT - Command-line conversion and creation tools for comic book files",
-  "main": "./app/main.js",
-  "bin": "./app/main.js",
+  "main": "./src/main.js",
+  "bin": "./src/main.js",
   "scripts": {
-    "start": "node ./app/main.js",
+    "start": "node ./src/main.js",
     "dist": "echo 'Making windows and linux builds on linux' && npm run dist:cross-windows && npm run dist:cross-linux",
     "dist:linux": "echo 'Making linux build on linux' && npm run 7zbin:linux && npm run build:linux",
     "dist:windows": "echo 'Making windows build on windows' && npm run 7zbin:windows && npm run build:windows",
