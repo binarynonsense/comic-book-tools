@@ -57,7 +57,7 @@ On Windows, conversion from pdf to any other format fails with an error due to a
 
 ## Downloads:
 
-Not yet available.
+The project is still in beta, check the [Releases](https://github.com/binarynonsense/comic-book-tools/releases) section to download the latest build.
 
 ## License:
 
