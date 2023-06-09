@@ -61,4 +61,4 @@ The project is still in beta, check the [Releases](https://github.com/binarynons
 
 ## License:
 
-ACBT's code is released under the BSD 2-Clause [license](./LICENSE).
+ACBT's code is released under the BSD 2-Clause [license](./LICENSE). To check the licenses of the node modules and other libraries used in the project go to the [licenses](./licenses/) folder.
