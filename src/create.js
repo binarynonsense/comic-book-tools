@@ -289,9 +289,9 @@ async function start(inputFilePaths, options, command) {
     summaryErrors++;
   }
 
-  console.log("Creation Finished:");
-  //console.log("\ttotal files: " + summaryTotal);
-  console.log("\tfiles created: " + summarySuccesses);
-  console.log("\terrors: " + summaryErrors);
+  // console.log("Creation Finished:");
+  // //console.log("\ttotal files: " + summaryTotal);
+  // console.log("\tfiles created: " + summarySuccesses);
+  // console.log("\terrors: " + summaryErrors);
 }
 exports.start = start;

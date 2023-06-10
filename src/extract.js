@@ -331,8 +331,8 @@ async function start(inputFilePaths, options, command) {
     console.log("Successfully extracted the file to " + outputSubFolderPath);
   }
   console.log("Extraction Finished:");
-  console.log("\ttotal files: " + summaryTotal);
-  console.log("\tfiles extracted: " + summarySuccesses);
-  console.log("\terrors: " + summaryErrors);
+  console.log("\tcomic book files found: " + summaryTotal);
+  console.log("\t\textracted: " + summarySuccesses);
+  console.log("\t\terrors: " + summaryErrors);
 }
 exports.start = start;
