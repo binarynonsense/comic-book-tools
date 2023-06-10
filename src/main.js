@@ -1,4 +1,7 @@
 const { Command, Option } = require("commander");
+// canvas needs to be required before sharp to avoid a conflict in windows
+// ref: : https://github.com/Automattic/node-canvas/issues/930
+const Canvas = require("canvas");
 const convert = require("./convert");
 const extract = require("./extract");
 const create = require("./create");
