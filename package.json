@@ -1,6 +1,6 @@
 {
   "name": "acbt-comic-book-tools",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0",
   "description": "ACBT - Command-line conversion and creation tools for comic book files",
   "main": "./src/main.js",
   "bin": "./src/main.js",
