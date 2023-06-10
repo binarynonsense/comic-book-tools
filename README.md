@@ -2,13 +2,12 @@
 
 ACBT - Command-line conversion and creation tools for comic book files (Windows & Linux).
 
-This project is still in early development, lacking some of the functionality and testing required for a first stable release, and aims to be a stand-alone, command-line version of some of the tools available in ["ACBR - Comic Book Reader"](https://github.com/binarynonsense/comic-book-reader).
+This project aims to be a stand-alone, command-line version of some of the tools available in ["ACBR - Comic Book Reader"](https://github.com/binarynonsense/comic-book-reader).
 
 ## Contents:
 
 - [Features](#features)
 - [Usage](#usage)
-- [Known Issues](#known-issues)
 - [Downloads](#downloads)
 - [License](#license)
 
@@ -51,13 +50,12 @@ This project is still in early development, lacking some of the functionality an
   - example: extract the file 'test.cbr' in the 'input' subfolder to the 'output' subfolder (a new subfolder inside it, with a unique name based on the file's one, will be created and the extracted images will be stored there), scaling the images to a 60% of their original size and converting them to png
     - `acbt extract -o output -s 60 -if png input/test.cbr`
 
-## Known Issues:
-
-On Windows, extracting a pdf or converting a pdf to any other format fails with an error due to a conflict between two of the libraries I use (node-canvas and sharp) that I haven't been able to fix so far.
-
 ## Downloads:
 
-The project is still in beta, check the [Releases](https://github.com/binarynonsense/comic-book-tools/releases) section to download the latest build if you want to help test it.
+<a href="https://github.com/binarynonsense/comic-book-tools/releases/latest"><img src="https://shields.io/github/v/release/binarynonsense/comic-book-tools?display_name=tag&label=version" title="version"></a>
+
+- [Windows](https://github.com/binarynonsense/comic-book-tools/releases/latest/download/ACBT_Windows.zip)
+- [Linux](https://github.com/binarynonsense/comic-book-tools/releases/latest/download/ACBT_Linux.zip)
 
 ## License:
 
