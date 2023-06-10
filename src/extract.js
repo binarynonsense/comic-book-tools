@@ -330,9 +330,9 @@ async function start(inputFilePaths, options, command) {
     fileUtils.cleanUpTempFolder();
     console.log("Successfully extracted the file to " + outputSubFolderPath);
   }
-  console.log("Extraction Finished:");
-  console.log("\tcomic book files found: " + summaryTotal);
-  console.log("\t\textracted: " + summarySuccesses);
-  console.log("\t\terrors: " + summaryErrors);
+  console.log("\nExtraction Finished:");
+  console.log(" - comic book files found: " + summaryTotal);
+  console.log(" - extracted: " + summarySuccesses);
+  console.log(" - errors: " + summaryErrors);
 }
 exports.start = start;

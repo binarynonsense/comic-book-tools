@@ -418,8 +418,8 @@ async function start(inputFilePaths, options, command) {
     console.log("Successfully created " + outputFilePath);
   }
   console.log("\nConversion Finished:");
-  console.log("\tcomic book files found: " + summaryTotal);
-  console.log("\t\tconverted: " + summarySuccesses);
-  console.log("\t\terrors: " + summaryErrors);
+  console.log(" - comic book files found: " + summaryTotal);
+  console.log(" - converted: " + summarySuccesses);
+  console.log(" - errors: " + summaryErrors);
 }
 exports.start = start;
