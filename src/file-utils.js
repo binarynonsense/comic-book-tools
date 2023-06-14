@@ -167,10 +167,10 @@ function cleanUpTempFolder() {
 }
 exports.cleanUpTempFolder = cleanUpTempFolder;
 
-const deleteTempFolderRecursive = function (folderPath, isRoot = true) {
+const deleteTempFolderRecursive = function (folderPath) {
   if (fs.existsSync(folderPath)) {
     let folderName = path.basename(folderPath);
-    if (isRoot && !folderName.startsWith("acbt-")) {
+    if (!folderName.includes("acbt-")) {
       // safety check
       return;
     }
@@ -178,7 +178,7 @@ const deleteTempFolderRecursive = function (folderPath, isRoot = true) {
     files.forEach((file) => {
       const entryPath = path.join(folderPath, file);
       if (fs.lstatSync(entryPath).isDirectory()) {
-        deleteTempFolderRecursive(entryPath, false);
+        deleteTempFolderRecursive(entryPath);
       } else {
         fs.unlinkSync(entryPath); // delete the file
       }
