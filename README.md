@@ -16,29 +16,29 @@ This is a stand-alone, command-line version of some of the tools available in ["
 - Windows & GNU/Linux versions.
 - Tools:
   - Convert/Resize:
-    - comic books (cbr, cbz, cb7, epub (images only) or pdf to cbz, cb7, epub or pdf).
+    - comic books (CBR, CBZ, CB7, EPUB (images only) or PDF to CBZ, CB7, EPUB or PDF).
   - Create:
-    - a comic book (cbz, cb7, pdf or epub) from a list of image files.
+    - a comic book (CBZ, CB7, PDF or EPUB) from a list of image files.
   - Extract:
-    - comic book pages to image files (jpg, png, avif or webp).
+    - comic book pages to image files (JPG, PNG, AVIF or WebP).
 
 ## Usage:
 
 - Convert/Resize:
   - print a list of the available arguments and options:
     - `acbt convert -h`
-  - example: convert the file 'test.cbz' in the current folder to pdf
+  - example: convert the file 'test.cbz' in the current folder to PDF
     - `acbt convert -f pdf test.cbz`
-  - example: convert the file 'test.cbz' in the current folder and all the files in the 'input' subfolder to epub
+  - example: convert the file 'test.cbz' in the current folder and all the files in the 'input' subfolder to EPUB
     - `acbt convert -f epub text.cbz input/*.*`
-  - example: convert the file 'test.cbr' in the 'input' subfolder to cb7, scaling the images to a 60% of their original size, converting them to png and storing the output file in the 'output' subfolder
+  - example: convert the file 'test.cbr' in the 'input' subfolder to CB7, scaling the images to a 60% of their original size, converting them to png and storing the output file in the 'output' subfolder
     - `acbt convert -f cb7 -o output -s 60 -if png input/test.cbr`
 - Create:
   - print a list of the available arguments and options:
     - `acbt create -h`
-  - example: create a cbz file from all the jpg images in the 'input' subfolder and store it in the current folder using the default name
+  - example: create a CBZ file from all the JPG images in the 'input' subfolder and store it in the current folder using the default name
     - `acbt create -f cbz input/*.jpg`
-  - example: same as before but scaling the images to a 60%, converting them to webp, using 'my comic book' as the base for the created file's name and storing it in the 'output' subfolder
+  - example: same as before but scaling the images to a 60%, converting them to WebP, using 'my comic book' as the base for the created file's name and storing it in the 'output' subfolder
     - `acbt create -f cbz -s 60 -if webp -o temp/ -n "my comic book" input/*.jpg`
 - Extract:
   - print a list of the available arguments and options:
@@ -47,7 +47,7 @@ This is a stand-alone, command-line version of some of the tools available in ["
     - `acbt extract test.cbz`
   - example: same as before but will also extract all the files inside the 'input' subfolder
     - `acbt extract text.cbz input/*.*`
-  - example: extract the file 'test.cbr' in the 'input' subfolder to the 'output' subfolder (a new subfolder inside it, with a unique name based on the file's one, will be created and the extracted images will be stored there), scaling the images to a 60% of their original size and converting them to png
+  - example: extract the file 'test.cbr' in the 'input' subfolder to the 'output' subfolder (a new subfolder inside it, with a unique name based on the file's one, will be created and the extracted images will be stored there), scaling the images to a 60% of their original size and converting them to PNG
     - `acbt extract -o output -s 60 -if png input/test.cbr`
 
 ## Downloads:
