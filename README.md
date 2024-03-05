@@ -2,7 +2,7 @@
 
 ACBT - Command-line conversion and creation tools for comic book files (Windows & Linux).
 
-This is a stand-alone, command-line version of some of the tools available in ["ACBR - Comic Book Reader"](https://github.com/binarynonsense/comic-book-reader).
+This is a stand-alone, command-line version of some of the tools available in ["ACBR - Comic Book Reader"](https://github.com/binarynonsense/comic-book-reader). It was made as a quick test to see if some of the code from ACBR could be used to make a basic command-line tool and probably won't be updated often, if at all.
 
 ## Contents:
 
